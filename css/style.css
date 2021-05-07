@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #000;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px 0 15px;
+  margin: 0 auto 0 auto;
+}
+
+/* Header */
+#header {
+  height: 90px;
+  padding: 25px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+#header.header-scrolled,
+#header.header-fixed {
+  background: rgba(86, 86, 89, 0.98);
+  height: 70px;
+  padding: 15px 0;
+  transition: all 0.5s;
+}
+
+#header #logo img {
+	max-height: 40px;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Navigation Menu */
+#nav-menu-container {
+	float: right;
+}
+
+.nav-menu {
+	list-style: none;
+	display: flex;
+}
+
+.nav-menu li {
+	position: relative;
+	white-space: nowrap;
+}
+
+/* Nav Menu Styling */
+.nav-menu a {
+	padding: 8px;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-weight: 500;
+  outline: none;
+	text-transform: uppercase;
+}
+
+.nav-menu .menu-active a,
+.nav-menu a:hover {
+  color: #fdee30;
+}
+
+.nav-menu > li {
+  margin-left: 8px;
+}
+
+.nav-menu > li > a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fdee30;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-menu a:hover:before,
+.nav-menu li:hover > a:before,
+.nav-menu .menu-active > a:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.nav-menu li.cta {
+	align-self: center;
+}
+
+.nav-menu li.cta a {
+  color: #333;
+  background: #fdee30;
+  padding: 7px 22px;
+  border-radius: 2px;
+  border: 2px solid #fdee30;
+  transition: all ease-in-out 0.3s;
+  font-weight: 500;
+  margin-left: 8px;
+  margin-top: 2px;
+  line-height: 1;
+  font-size: 13px;
+}
+
+.nav-menu li.cta a:hover {
+  background: none;
+	color: #fff;
+}
+
+.nav-menu li.cta:hover a:before,
+.nav-menu li.cta.menu-active a:before {
+  visibility: hidden;
+}
+
+/* --------------
+# Media Queries
+-------------- */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
